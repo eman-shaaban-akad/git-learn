@@ -2,7 +2,7 @@ on:
   release:
     types: [prereleased]
 
-name: Deploy to Dev test stage
+name: Show release number
 
 jobs:
   prerelease:
@@ -10,7 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Trigger update for the Dev service
-      run: |
-         echo ${GITHUB_REF##*/}
+      run: echo ${GITHUB_REF##*/}
