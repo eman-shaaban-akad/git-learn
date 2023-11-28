@@ -31,7 +31,7 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.current }}
           release_name: Release v${{ steps.version.outputs.current }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             TBC - Update 
           draft: false
