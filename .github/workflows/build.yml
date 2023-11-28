@@ -7,6 +7,7 @@ on:
 
 env:
   build-number: ${{github.run_number}}
+  GITHUB_TOKEN: ${{ secrets.PAT }}
   
 run-name: Build code from staging branch / version ${{ github.env.build-number }}
 
@@ -20,8 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
           
       - name: Get current version
         id: version
