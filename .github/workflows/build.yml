@@ -33,6 +33,7 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.current }}
           release_name: Release v${{ steps.version.outputs.current }}
+          token: ${{ secrets.PAT }}
           body: |
             TBC - Update 
           draft: false
