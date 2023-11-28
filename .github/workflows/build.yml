@@ -7,7 +7,6 @@ on:
 
 env:
   build-number: ${{github.run_number}}
-  GITHUB_TOKEN: ${{ secrets.PAT }}
   
 run-name: Build code from staging branch / version ${{ github.env.build-number }}
 
@@ -29,6 +28,8 @@ jobs:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
+        env:
+          token: ${{ secrets.PAT }}        
         with:
           tag_name: ${{ steps.version.outputs.current }}
           release_name: Release v${{ steps.version.outputs.current }}
