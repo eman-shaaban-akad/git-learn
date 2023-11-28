@@ -27,13 +27,11 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}        
+        uses: actions/create-release@v1        
         with:
           tag_name: ${{ steps.version.outputs.current }}
           release_name: Release v${{ steps.version.outputs.current }}
-          token: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           body: |
             TBC - Update 
           draft: false
