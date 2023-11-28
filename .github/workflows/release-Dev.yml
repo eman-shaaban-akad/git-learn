@@ -10,5 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Show Release Info
+      run: |
+        echo "Pushing release ${{ secrets.GITHUB_TOKEN }} to production"
+        
     - name: Trigger update for the Dev service
       run: echo ${GITHUB_REF##*/}
