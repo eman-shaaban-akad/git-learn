@@ -8,7 +8,7 @@ on:
 env:
   build-number: ${{github.run_number}}
   
-run-name: Build code from stage branch / version ${{ github.env.build-number }}
+run-name: Build code from stage branch / version ${{ github.run_number }}
 
 jobs:
 
