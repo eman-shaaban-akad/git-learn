@@ -1,14 +1,14 @@
 on:
-  release:
-    types: [prereleased]
-    branches:
-      - 'Stage'
+  workflow_run:
+    workflows: [Stage]
+    types: [completed]
+    branches: [Stage]
 
 name: Show release number - Stage
 
 jobs:
   prerelease:
-    name: Deploy to Stadion Dev
+    name: Deploy to Stadion Stage
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +16,5 @@ jobs:
       run: |
         echo "Pushing release ${{ secrets.GITHUB_TOKEN }} to Stage"
         
-    - name: Trigger update for the Dev service
+    - name: Trigger update for the Stage service
       run: echo ${GITHUB_REF##*/}
