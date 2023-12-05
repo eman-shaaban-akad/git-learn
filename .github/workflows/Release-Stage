@@ -1,0 +1,21 @@
+on:
+  workflow_run:
+    workflows: ["Build to Stage"]
+    types: [requested]
+    branches:
+      - 'Stage'
+
+name: Show release number - Stage
+
+jobs:
+  prerelease:
+    name: Deploy to Stadion Dev
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Show Release Info
+      run: |
+        echo "Pushing release ${{ secrets.GITHUB_TOKEN }} to Stage"
+        
+    - name: Trigger update for the Dev service
+      run: echo ${GITHUB_REF##*/}
