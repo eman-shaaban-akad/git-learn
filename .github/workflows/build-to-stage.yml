@@ -1,4 +1,4 @@
-name: Stage
+name: Build to Stage
 
 on:
   push:
@@ -36,6 +36,6 @@ jobs:
           body: |
             TBC - Update 
           draft: false
-          prerelease: true
+          prerelease: false
 
    
