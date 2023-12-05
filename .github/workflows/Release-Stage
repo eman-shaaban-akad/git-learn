@@ -1,7 +1,7 @@
 on:
   workflow_run:
     workflows: ["Stage"]
-    types: [requested]
+    types: [completed]
     branches:
       - 'Stage'
 
