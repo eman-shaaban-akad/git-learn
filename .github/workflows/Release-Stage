@@ -1,7 +1,6 @@
 on:
-  workflow_run:
-    workflows: ["Stage"]
-    types: [completed]
+  release:
+    types: [prereleased]
     branches:
       - 'Stage'
 
