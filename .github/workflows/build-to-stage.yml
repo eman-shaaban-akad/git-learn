@@ -36,7 +36,6 @@ jobs:
           body: |
             TBC - Update 
           draft: false
-          prerelease: false
+          prerelease: true
 
    
-
