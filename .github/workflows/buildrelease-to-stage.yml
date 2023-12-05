@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - Stage
+
+env:
+  build-number: ${{github.run_number}}
+  
+run-name: Build code from staging branch / version ${{ github.env.build-number }}
+
+jobs:
+
+  build-and-push:
+    name: Builds the code and pushes a docker image to ECR
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+          
+      - name: Get current version
+        id: version
+        run: echo "current=$(date +'%Y.%m.%d').$GITHUB_RUN_NUMBER-STG" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}        
+        with:
+          tag_name: ${{ steps.version.outputs.current }}
+          release_name: Release v${{ steps.version.outputs.current }}
+          body: |
+            TBC - Update 
+          draft: false
+          prerelease: true
+
+   
+
