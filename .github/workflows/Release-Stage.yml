@@ -1,8 +1,8 @@
 on:
-  workflow_run:
-    workflows: [Stage]
-    types: [completed]
-    branches: [Stage]
+  release:
+    types: [released]
+    branches:
+      - 'Stage'
 
 name: Show release number - Stage
 
