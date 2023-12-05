@@ -5,7 +5,7 @@ on:
     branches:
       - 'Stage'
 
-name: Show release number - Dev
+name: Show release number - Stage
 
 jobs:
   prerelease:
@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Show Release Info
       run: |
-        echo "Pushing release ${{ secrets.GITHUB_TOKEN }} to production"
+        echo "Pushing release ${{ secrets.GITHUB_TOKEN }} to Stage"
         
     - name: Trigger update for the Dev service
       run: echo ${GITHUB_REF##*/}
