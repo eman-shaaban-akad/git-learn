@@ -2,7 +2,7 @@ on:
   release:
     types: [prereleased]
 
-name: Show release number
+name: Show release number - Dev
 
 jobs:
   prerelease:
