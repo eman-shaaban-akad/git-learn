@@ -1,6 +1,8 @@
 on:
   release:
     types: [prereleased]
+    branches:
+      - 'master'
 
 name: Show release number - Dev
 
