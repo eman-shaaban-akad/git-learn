@@ -1,4 +1,4 @@
-name: Build to Stage
+name: Stage
 
 on:
   push:
