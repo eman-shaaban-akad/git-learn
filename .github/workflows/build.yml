@@ -34,7 +34,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.current }}
           release_name: Release v${{ steps.version.outputs.current }}
           body: |
-            TBC - Update 
+            TBC - Update DEV
           draft: false
           prerelease: true
 
